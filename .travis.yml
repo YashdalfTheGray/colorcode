@@ -1,0 +1,10 @@
+language: go
+
+go:
+  - "1.12"
+
+install:
+  - go mod download
+
+script:
+  - make coverage
