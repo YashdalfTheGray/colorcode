@@ -1,5 +1,3 @@
-// Package colorcode provides color space definitions
-// and methods to convert between them.
 package colorcode
 
 import (
@@ -78,13 +76,14 @@ func (c RGB) ToHSL() HSL {
 
 // ToHSV returns the HSV representation of the RGB color
 func (c RGB) ToHSV() HSV {
+	var h, s, v float64
+
 	fracR := float64(c.R) / 255.0
 	fracG := float64(c.G) / 255.0
 	fracB := float64(c.B) / 255.0
 
 	max := math.Max(math.Max(fracR, fracG), fracB)
 	min := math.Min(math.Min(fracR, fracG), fracB)
-	h, s, v := max, max, max
 	diff := max - min
 
 	errorCorrect := func(g, b float64) float64 {
@@ -93,6 +92,8 @@ func (c RGB) ToHSV() HSV {
 		}
 		return 0
 	}
+
+	v = max
 
 	if max == 0 {
 		s = 0

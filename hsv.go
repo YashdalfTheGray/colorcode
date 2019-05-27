@@ -1,5 +1,3 @@
-// Package colorcode provides color space definitions
-// and methods to convert between them.
 package colorcode
 
 import (
