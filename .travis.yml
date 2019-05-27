@@ -8,8 +8,9 @@ env:
 
 install:
   - go mod download
-  - go get -t golang.org/x/tools/cmd/cover
-  - go get -t github.com/mattn/goveralls
+  - go get github.com/ory/go-acc
+  - go get golang.org/x/tools/cmd/cover
+  - go get github.com/mattn/goveralls
 
 script:
   - make coverage
