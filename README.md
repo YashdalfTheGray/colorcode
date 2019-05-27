@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.com/YashdalfTheGray/colorcode.svg?branch=master)](https://travis-ci.com/YashdalfTheGray/colorcode)
+[![Coverage Status](https://coveralls.io/repos/github/YashdalfTheGray/colorcode/badge.svg?branch=master)](https://coveralls.io/github/YashdalfTheGray/colorcode?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/yashdalfthegray/colorcode)](https://goreportcard.com/report/github.com/yashdalfthegray/colorcode)
+[![Documentation](https://godoc.org/github.com/yashdalfthegray/colorcode?status.svg)](http://godoc.org/github.com/yashdalfthegray/colorcode)
+
 # colorcode
 
 A library of color spaces and conversions written in Go 🎨
@@ -32,3 +37,7 @@ func main() {
   }
 }
 ```
+
+## Contributing
+
+Feel free to use Github to open issues and create PRs against this repository. There are templates that you can use to describe issues and PRs as needed. Please follow the guidelines in the [contribution guide](.github/CONTRIBUTING.md) for development. This project uses Go 1.12 with standard tooling and Go modules.
