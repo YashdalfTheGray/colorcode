@@ -1,17 +1,16 @@
 language: go
-
 go:
-  - "1.12"
-
+- '1.12'
 env:
+  matrix:
   - GO111MODULE=on
-
+  global:
+    secure: e4vFPfDZ9eDZG2TgmeCmu82itFa8YBuYaU8TtXV7fQa26uscrVhHIh6pXU711e0npLNh81t81phcTCXdECGBiizP9hBMG4lHYrkV1GIZL6abMvZeVXU9we3Gn/t5kIVIu4MgooHQTQO0Vz6EQPAIr1Dh8DeT09Mlw/3alL8LfiVZIJAM1eQAdemwKDSVPkgiRNRgrgXbYoRXaZdiBlJflHFeedKFcyWkuCspY0Ib9QJid4GW0v7839JaQ/lDeNI9eOvGuE1H52MOSoO/qg53KyK5daq1sHDPsj+HovtkmDPSk1hAksOuMUwNqQtquqYfjKf+0cg9LdgdF29NtQ84h0QjiG1FJDU3Bko3QRD0d4t+X4lDYjc49ecCyiN/7nHE6nehfjZNOvVPJ8KADIUcMflUhvbSGh54fZb0xbGu1CesItiSTKJ3tpC3+GfOFFlBw8gg3pInM6fnFY1Woj5hX2NVoGUuUpoHOF3CN99k79/qSVpKeSNw8xf005H1HDOrtwgFJHwGsrR6fwJPkXhXfs4EnD9TPEI7ASakECRXcFKrL+QNyP/la+s0RLPGbzuL5EXRI8VOsG6ZBOGNCahjz4qCLBVev3+EscBxwlgiojYjWzRW9keFxaXp7wl4h44DhS8td6Zd4FOIw57Pak2ZDW0Ys393feA5zlU/ujem8sA=
 install:
-  - go mod download
-  - go get github.com/ory/go-acc
-  - go get golang.org/x/tools/cmd/cover
-  - go get github.com/mattn/goveralls
-
+- go mod download
+- go get github.com/ory/go-acc
+- go get golang.org/x/tools/cmd/cover
+- go get github.com/mattn/goveralls
 script:
-  - make coverage
-  - $HOME/gopath/bin/goveralls -coverprofile=artifacts/c.out -service=travis-pro -repotoken=$COVERALLS_TOKEN
+- make coverage
+- "$HOME/gopath/bin/goveralls -coverprofile=artifacts/c.out -service=travis-pro -repotoken=$COVERALLS_TOKEN"
