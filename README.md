@@ -9,7 +9,7 @@ A library of color spaces and conversions written in Go 🎨
 
 ## Get the library
 
-Getting the code down is as simple as running `go get yashdalfthegray/colorcode`
+Getting the code down is as simple as running `go get github.com/yashdalfthegray/colorcode` and then importing into your code with `import "github.com/yashdalfthegray/colorcode"`.
 
 ## What's included?
 
