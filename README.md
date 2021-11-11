@@ -41,4 +41,4 @@ func main() {
 
 ## Contributing
 
-Feel free to use Github to open issues and create PRs against this repository. There are templates that you can use to describe issues and PRs as needed. Please follow the guidelines in the [contribution guide](.github/CONTRIBUTING.md) for development. This project uses Go 1.12 with standard tooling and Go modules.
+Feel free to use Github to open issues and create PRs against this repository. There are templates that you can use to describe issues and PRs as needed. Please follow the guidelines in the [contribution guide](.github/CONTRIBUTING.md) for development. This project uses Go 1.17 with standard tooling and Go modules.
