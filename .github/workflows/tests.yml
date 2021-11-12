@@ -32,7 +32,7 @@ jobs:
         run: make coverage
 
       - name: Install goveralls
-        run: go install github.com/mattn/goveralls@latest
+        run: go install github.com/mattn/goveralls
 
       - name: Send coverage
         env:
