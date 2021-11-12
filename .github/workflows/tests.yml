@@ -13,6 +13,7 @@ jobs:
         os: [macos-latest, ubuntu-latest]
         go: ['1.15', '1.16', '1.17']
     runs-on: ${{ matrix.os }}
+
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
@@ -22,5 +23,18 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
 
-      - name: Test using Make
-        run: make test
+      - name: Get coverage tools
+        run: \
+          go get github.com/ory/go-acc
+          go get golang.org/x/tools/cmd/cover
+
+      - name: Run tests, generate coverage
+        run: make coverage
+
+      - name: Install goveralls
+        run: go install github.com/mattn/goveralls@latest
+
+      - name: Send coverage
+        env:
+          COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: goveralls -coverprofile=artifacts/c.out -service=github
