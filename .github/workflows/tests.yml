@@ -24,7 +24,7 @@ jobs:
           go-version: ${{ matrix.go }}
 
       - name: Get coverage tools
-        run: \
+        run: |
           go get github.com/ory/go-acc
           go get golang.org/x/tools/cmd/cover
 
