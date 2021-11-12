@@ -32,7 +32,12 @@ jobs:
         run: make coverage
 
       - name: Install goveralls
+        if: matrix.go == '1.15'
         run: go install github.com/mattn/goveralls
+
+      - name: Install goveralls
+        if: matrix.go != '1.15'
+        run: go install github.com/mattn/goveralls@latest
 
       - name: Send coverage
         env:

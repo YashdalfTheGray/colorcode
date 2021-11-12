@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/YashdalfTheGray/colorcode.svg?branch=master)](https://travis-ci.com/YashdalfTheGray/colorcode)
 [![tests](https://github.com/YashdalfTheGray/colorcode/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/YashdalfTheGray/colorcode/actions/workflows/tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/YashdalfTheGray/colorcode/badge.svg?branch=master)](https://coveralls.io/github/YashdalfTheGray/colorcode?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/yashdalfthegray/colorcode)](https://goreportcard.com/report/github.com/yashdalfthegray/colorcode)
