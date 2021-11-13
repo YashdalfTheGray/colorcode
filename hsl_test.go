@@ -170,3 +170,25 @@ func TestHSLToHSV(t *testing.T) {
 		})
 	}
 }
+
+func benchmarkHSLToRGB(b *testing.B, h, s, l float64) {
+	for i := 0; i < b.N; i++ {
+		colorcode.HSL{h, s, l}.ToRGB()
+	}
+}
+
+func BenchmarkHSLToRGB_NonGray(b *testing.B) {
+	benchmarkHSLToRGB(b, 200, 90, 50)
+}
+
+func BenchmarkHSLToRGB_Gray(b *testing.B) {
+	benchmarkHSLToRGB(b, 0, 0, 50)
+}
+
+func BenchmarkHSLToRGB_LowLuminosity(b *testing.B) {
+	benchmarkHSLToRGB(b, 256, 100, 15)
+}
+
+func BenchmarkHSLToRGB_Green(b *testing.B) {
+	benchmarkHSLToRGB(b, 90, 100, 15)
+}
