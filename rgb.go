@@ -107,13 +107,10 @@ func (c RGB) ToHSV() HSV {
 		switch {
 		case fracR == max:
 			h = ((fracG - fracB) / diff) + errorCorrect(fracG, fracB)
-			break
 		case fracG == max:
 			h = ((fracB - fracR) / diff) + 2
-			break
 		case fracB == max:
 			h = ((fracR - fracG) / diff) + 4
-			break
 		}
 
 		h /= 6

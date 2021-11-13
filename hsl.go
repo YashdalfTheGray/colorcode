@@ -17,7 +17,7 @@ type HSL struct {
 // values given to the constructor function
 func NewHSL(h, s, l float64) (HSL, error) {
 	if h < 0 || h > 360 || s < 0 || s > 100 || l < 0 || l > 100 {
-		return HSL{}, errors.New("Invalid argument error")
+		return HSL{}, errors.New("invalid argument error")
 	}
 	return HSL{h, s, l}, nil
 }

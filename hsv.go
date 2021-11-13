@@ -15,7 +15,7 @@ type HSV struct {
 // NewHSV takes values for H, S and V and returns an HSV type
 func NewHSV(h, s, v float64) (HSV, error) {
 	if h < 0 || h > 360 || s < 0 || s > 100 || v < 0 || v > 100 {
-		return HSV{}, errors.New("Invalid argument error")
+		return HSV{}, errors.New("invalid argument error")
 	}
 	return HSV{h, s, v}, nil
 }
@@ -53,7 +53,7 @@ func (c HSV) ToRGB() RGB {
 	case 5:
 		return RGB{uint8(v), uint8(p), uint8(q)}
 	}
-	panic(errors.New("A number modulo 6 should never be outside of range [0, 5]"))
+	panic(errors.New("a number modulo 6 should never be outside of range [0, 5]"))
 }
 
 // ToHexCode converts the HSV color into the HexCode representation
