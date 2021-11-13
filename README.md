@@ -1,7 +1,7 @@
 [![tests](https://github.com/YashdalfTheGray/colorcode/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/YashdalfTheGray/colorcode/actions/workflows/tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/YashdalfTheGray/colorcode/badge.svg?branch=master)](https://coveralls.io/github/YashdalfTheGray/colorcode?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/yashdalfthegray/colorcode)](https://goreportcard.com/report/github.com/yashdalfthegray/colorcode)
-[![Documentation](https://godoc.org/github.com/yashdalfthegray/colorcode?status.svg)](http://godoc.org/github.com/yashdalfthegray/colorcode)
+[![Go Report Card](https://goreportcard.com/badge/github.com/YashdalfTheGray/colorcode)](https://goreportcard.com/report/github.com/YashdalfTheGray/colorcode)
+[![Documentation](https://godoc.org/github.com/YashdalfTheGray/colorcode?status.svg)](http://godoc.org/github.com/YashdalfTheGray/colorcode)
 
 # colorcode
 
@@ -9,7 +9,7 @@ A library of color spaces and conversions written in Go 🎨
 
 ## Get the library
 
-Getting the code down is as simple as running `go get github.com/yashdalfthegray/colorcode` and then importing into your code with `import "github.com/yashdalfthegray/colorcode"`.
+Getting the code down is as simple as running `go get github.com/YashdalfTheGray/colorcode` and then importing into your code with `import "github.com/YashdalfTheGray/colorcode"`.
 
 ## What's included?
 
