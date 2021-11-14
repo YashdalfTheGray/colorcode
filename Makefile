@@ -8,6 +8,9 @@ GOACC := $(shell command -v go-acc 2> /dev/null)
 test:
 	go test -covermode=atomic -coverpkg=all ./...
 
+benchmark:
+	go test -run=Bench -bench=.
+
 coverage: .artifacts-stamp
 ifndef GOACC
 	go get github.com/ory/go-acc
