@@ -192,3 +192,21 @@ func BenchmarkHSLToRGB_LowLuminosity(b *testing.B) {
 func BenchmarkHSLToRGB_Green(b *testing.B) {
 	benchmarkHSLToRGB(b, 90, 100, 15)
 }
+
+func benchmarkHSLToHSV(b *testing.B, h, s, l float64) {
+	for i := 0; i < b.N; i++ {
+		colorcode.HSL{h, s, l}.ToRGB()
+	}
+}
+
+func BenchmarkHSLToHSV_AColor(b *testing.B) {
+	benchmarkHSLToHSV(b, 197, 84, 63)
+}
+
+func BenchmarkHSLToHSV_ADullColor(b *testing.B) {
+	benchmarkHSLToHSV(b, 197, 84, 30)
+}
+
+func BenchmarkHSLToHSV_AnotherDullColor(b *testing.B) {
+	benchmarkHSLToHSV(b, 197, 84, 0)
+}
