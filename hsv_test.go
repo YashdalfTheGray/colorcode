@@ -200,3 +200,37 @@ func TestHSVToHSL(t *testing.T) {
 		})
 	}
 }
+
+func benchmarkHSVToRGB(b *testing.B, h, s, v float64) {
+	for n := 0; n < b.N; n++ {
+		_ = colorcode.HSV{h, s, v}.ToRGB()
+	}
+}
+
+func BenchmarkHSVToRGB_Dark(b *testing.B) {
+	benchmarkHSVToRGB(b, 216.23, 82.81, 50.2)
+}
+
+func BenchmarkHSVToRGB_Orange(b *testing.B) {
+	benchmarkHSVToRGB(b, 23, 100, 100)
+}
+
+func BenchmarkHSVToRGB_Green(b *testing.B) {
+	benchmarkHSVToRGB(b, 82, 100, 100)
+}
+
+func BenchmarkHSVToRGB_Teal(b *testing.B) {
+	benchmarkHSVToRGB(b, 170, 100, 100)
+}
+
+func BenchmarkHSVToRGB_Blue(b *testing.B) {
+	benchmarkHSVToRGB(b, 226, 100, 100)
+}
+
+func BenchmarkHSVToRGB_Purple(b *testing.B) {
+	benchmarkHSVToRGB(b, 280, 100, 100)
+}
+
+func BenchmarkHSVToRGB_Red(b *testing.B) {
+	benchmarkHSVToRGB(b, 344, 100, 100)
+}
