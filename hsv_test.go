@@ -186,7 +186,7 @@ func TestHSVToHSL(t *testing.T) {
 			out:  "hsl(198, 43%, 1%)",
 		},
 		{
-			desc: "converts a black HSV color to HSL",
+			desc: "converts a black HSV color to RGB",
 			in:   colorcode.HSV{198, 60, 0.5},
 			out:  "hsl(198, 0%, 0%)",
 		},
@@ -233,4 +233,22 @@ func BenchmarkHSVToRGB_Purple(b *testing.B) {
 
 func BenchmarkHSVToRGB_Red(b *testing.B) {
 	benchmarkHSVToRGB(b, 344, 100, 100)
+}
+
+func benchmarkHSVToHSL(b *testing.B, h, s, v float64) {
+	for n := 0; n < b.N; n++ {
+		_ = colorcode.HSV{h, s, v}.ToRGB()
+	}
+}
+
+func BenchmarkHSVToHSL_Bright(b *testing.B) {
+	benchmarkHSVToHSL(b, 344, 100, 100)
+}
+
+func BenchmarkHSVToHSL_Dark(b *testing.B) {
+	benchmarkHSVToHSL(b, 198, 60, 1)
+}
+
+func BenchmarkHSVToHSL_Black(b *testing.B) {
+	benchmarkHSVToHSL(b, 198, 60, 0.5)
 }
