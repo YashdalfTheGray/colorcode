@@ -176,26 +176,26 @@ func TestHSVToHSL(t *testing.T) {
 		out  string
 	}{
 		{
-			desc: "converts a bright HSV color to RGB",
+			desc: "converts a bright HSV color to HSL",
 			in:   colorcode.HSV{344, 100, 100},
 			out:  "hsl(344, 100%, 50%)",
 		},
 		{
-			desc: "converts a dark HSV color to RGB",
+			desc: "converts a dark HSV color to HSL",
 			in:   colorcode.HSV{198, 60, 1},
 			out:  "hsl(198, 43%, 1%)",
 		},
 		{
-			desc: "converts a black HSV color to RGB",
+			desc: "converts a black HSV color to HSL",
 			in:   colorcode.HSV{198, 60, 0.5},
 			out:  "hsl(198, 0%, 0%)",
 		},
 	}
 	for _, tC := range testCases {
 		t.Run(tC.desc, func(t *testing.T) {
-			rgbColor := tC.in.ToHSL()
-			if rgbColor.String() != tC.out {
-				t.Errorf("Expected %s but got %s", tC.out, rgbColor.String())
+			hslColor := tC.in.ToHSL()
+			if hslColor.String() != tC.out {
+				t.Errorf("Expected %s but got %s", tC.out, hslColor.String())
 			}
 		})
 	}
