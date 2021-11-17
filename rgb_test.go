@@ -174,3 +174,29 @@ func BenchmarkRGBToHSL_Dark(b *testing.B) {
 func BenchmarkRGBToHSL_MostlyGreen(b *testing.B) {
 	benchmarkRGBToHSL(b, 40, 150, 90)
 }
+
+func benchmarkRGBToHSV(be *testing.B, r, g, b uint8) {
+	for i := 0; i < be.N; i++ {
+		colorcode.RGB{r, g, b}.ToHSV()
+	}
+}
+
+func BenchmarkRGBToHSV_NonGray(b *testing.B) {
+	benchmarkRGBToHSV(b, 13, 166, 242)
+}
+
+func BenchmarkRGBToHSV_Gray(b *testing.B) {
+	benchmarkRGBToHSV(b, 128, 128, 128)
+}
+
+func BenchmarkRGBToHSV_Black(b *testing.B) {
+	benchmarkRGBToHSV(b, 0, 0, 0)
+}
+
+func BenchmarkRGBToHSV_Dark(b *testing.B) {
+	benchmarkRGBToHSV(b, 40, 34, 90)
+}
+
+func BenchmarkRGBToHSV_MostlyGreen(b *testing.B) {
+	benchmarkRGBToHSV(b, 40, 150, 90)
+}
