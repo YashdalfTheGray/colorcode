@@ -186,7 +186,7 @@ func TestHSVToHSL(t *testing.T) {
 			out:  "hsl(198, 43%, 1%)",
 		},
 		{
-			desc: "converts a black HSV color to RGB",
+			desc: "converts a black HSV color to HSL",
 			in:   colorcode.HSV{198, 60, 0.5},
 			out:  "hsl(198, 0%, 0%)",
 		},

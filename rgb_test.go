@@ -152,3 +152,25 @@ func TestRGBToHSV(t *testing.T) {
 		})
 	}
 }
+
+func benchmarkRGBToHSL(be *testing.B, r, g, b uint8) {
+	for i := 0; i < be.N; i++ {
+		colorcode.RGB{r, g, b}.ToHSL()
+	}
+}
+
+func BenchmarkRGBToHSL_NonGray(b *testing.B) {
+	benchmarkRGBToHSL(b, 13, 166, 242)
+}
+
+func BenchmarkRGBToHSL_Gray(b *testing.B) {
+	benchmarkRGBToHSL(b, 128, 128, 128)
+}
+
+func BenchmarkRGBToHSL_Dark(b *testing.B) {
+	benchmarkRGBToHSL(b, 40, 34, 90)
+}
+
+func BenchmarkRGBToHSL_MostlyGreen(b *testing.B) {
+	benchmarkRGBToHSL(b, 40, 150, 90)
+}
