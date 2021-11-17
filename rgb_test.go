@@ -119,27 +119,27 @@ func TestRGBToHSV(t *testing.T) {
 		out  string
 	}{
 		{
-			desc: "converts a non-gray RGB color to HSL",
+			desc: "converts a non-gray RGB color to HSV",
 			in:   colorcode.RGB{13, 166, 242},
 			out:  "hsv(200, 95%, 95%)",
 		},
 		{
-			desc: "converts a gray RGB color to HSL",
+			desc: "converts a gray RGB color to HSV",
 			in:   colorcode.RGB{128, 128, 128},
 			out:  "hsv(0, 0%, 50%)",
 		},
 		{
-			desc: "converts black color to HSL",
+			desc: "converts black color to HSV",
 			in:   colorcode.RGB{0, 0, 0},
 			out:  "hsv(0, 0%, 0%)",
 		},
 		{
-			desc: "converts a dark RGB color to HSL",
+			desc: "converts a dark RGB color to HSV",
 			in:   colorcode.RGB{40, 34, 90},
 			out:  "hsv(246, 62%, 35%)",
 		},
 		{
-			desc: "converts a mostly green RGB color to HSL",
+			desc: "converts a mostly green RGB color to HSV",
 			in:   colorcode.RGB{40, 150, 90},
 			out:  "hsv(147, 73%, 59%)",
 		},
