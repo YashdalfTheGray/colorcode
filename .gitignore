@@ -1,6 +1,7 @@
 # go built things
 artifacts
 .artifacts-stamp
+benchmarks.json
 
 # Created by https://www.gitignore.io/api/go,vim,linux,macos,windows
 # Edit at https://www.gitignore.io/?templates=go,vim,linux,macos,windows
