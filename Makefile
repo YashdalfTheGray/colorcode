@@ -13,11 +13,11 @@ test:
 benchmark:
 	go test -bench=. ./...
 
-benchdata-gen: .artifacts-stamp
+benchdata-gen:
 ifndef GOBENCHDATA
 	go get -u go.bobheadxi.dev/gobenchdata
 endif
-	go test -bench . -benchmem ./... | gobenchdata --append --json artifacts/benchmarks.json
+	go test -bench . -benchmem ./... | gobenchdata --append --json benchmarks.json
 
 benchdata-serve: benchdata-gen
 	gobenchdata web serve
