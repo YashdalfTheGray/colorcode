@@ -4,6 +4,7 @@ all: coverage
 # go list is the canonical utility to find go files
 GOFILES := $(shell go list -f '{{ join .GoFiles "\n" }}' ./...)
 GOACC := $(shell command -v go-acc 2> /dev/null)
+GOBENCHDATA := $(shell command -v gobenchdata 2> /dev/null)
 
 test:
 	go test -covermode=atomic -coverpkg=all ./...
