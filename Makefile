@@ -1,8 +1,9 @@
-.PHONY: all clean test coverage
+.PHONY: all clean test coverage benchmark benchdata-gen benchdata-serve
 all: coverage
 
 # go list is the canonical utility to find go files
 GOFILES := $(shell go list -f '{{ join .GoFiles "\n" }}' ./...)
+
 GOACC := $(shell command -v go-acc 2> /dev/null)
 GOBENCHDATA := $(shell command -v gobenchdata 2> /dev/null)
 
@@ -12,11 +13,13 @@ test:
 benchmark:
 	go test -bench=. ./...
 
-benchdata:
+benchdata-gen: .artifacts-stamp
 ifndef GOBENCHDATA
 	go get -u go.bobheadxi.dev/gobenchdata
 endif
-	go test -bench . -benchmem ./... | gobenchdata --json benchmarks.json
+	go test -bench . -benchmem ./... | gobenchdata --append --json artifacts/benchmarks.json
+
+benchdata-serve: benchdata-gen
 	gobenchdata web serve
 
 coverage: .artifacts-stamp
