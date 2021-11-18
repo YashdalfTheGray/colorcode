@@ -10,7 +10,14 @@ test:
 	go test -covermode=atomic -coverpkg=all ./...
 
 benchmark:
-	go test -run=Bench -bench=.
+	go test -bench=. ./...
+
+benchdata:
+ifndef GOBENCHDATA
+	go get -u go.bobheadxi.dev/gobenchdata
+endif
+	go test -bench . -benchmem ./... | gobenchdata --json benchmarks.json
+	gobenchdata web serve
 
 coverage: .artifacts-stamp
 ifndef GOACC
