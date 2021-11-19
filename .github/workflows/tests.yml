@@ -23,13 +23,17 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
 
-      - name: Get coverage tools
+      - name: Get coverage/benchmark tools
         run: |
           go get github.com/ory/go-acc
           go get golang.org/x/tools/cmd/cover
+          go get -u go.bobheadxi.dev/gobenchdata
 
       - name: Run tests, generate coverage
         run: make coverage
+
+      - name: Benchmark
+        run: make benchdata-gen
 
       - name: Install goveralls
         if: matrix.go == '1.15'
