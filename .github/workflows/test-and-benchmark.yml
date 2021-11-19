@@ -55,5 +55,5 @@ jobs:
       - name: Upload benchmark artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ format('benchmarks-{0}-{1}-{2}.json', steps.vars.outputs.sha_short, runner.os, matrix.golang) }}
+          name: ${{ format('benchmarks-{0}-{1}-{2}.json', steps.vars.outputs.sha_short, runner.os, matrix.go) }}
           path: benchmarks.json
