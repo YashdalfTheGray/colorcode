@@ -52,8 +52,8 @@ jobs:
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
-      - name: Upload artifacts for the functional tests workflow
+      - name: Upload benchmark artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ format('benchmarks-{0}.json', steps.vars.outputs.sha_short) }}
+          name: ${{ format('benchmarks-{0}-{1}-{2}.json', steps.vars.outputs.sha_short, runner.os, matrix.golang) }}
           path: benchmarks.json
