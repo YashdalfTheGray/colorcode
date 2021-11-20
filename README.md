@@ -1,5 +1,5 @@
-[![tests](https://github.com/YashdalfTheGray/colorcode/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/YashdalfTheGray/colorcode/actions/workflows/tests.yml)
-[![Coverage Status](https://coveralls.io/repos/github/YashdalfTheGray/colorcode/badge.svg?branch=master)](https://coveralls.io/github/YashdalfTheGray/colorcode?branch=master)
+[![test and Benchmark](https://github.com/YashdalfTheGray/colorcode/actions/workflows/test-and-benchmark.yml/badge.svg?branch=main)](https://github.com/YashdalfTheGray/colorcode/actions/workflows/test-and-benchmark.yml)
+[![Coverage Status](https://coveralls.io/repos/github/YashdalfTheGray/colorcode/badge.svg?branch=main)](https://coveralls.io/github/YashdalfTheGray/colorcode?branch=main)
 [![Go Report Card](https://goreportcard.com/badge/github.com/YashdalfTheGray/colorcode)](https://goreportcard.com/report/github.com/YashdalfTheGray/colorcode)
 [![Documentation](https://godoc.org/github.com/YashdalfTheGray/colorcode?status.svg)](http://godoc.org/github.com/YashdalfTheGray/colorcode)
 
