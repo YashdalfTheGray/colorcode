@@ -57,7 +57,7 @@ jobs:
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Upload benchmark artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ format('benchmarks-{0}-{1}-{2}.json', steps.vars.outputs.sha_short, runner.os, matrix.go) }}
           path: benchmarks.json
