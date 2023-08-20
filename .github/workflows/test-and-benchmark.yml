@@ -37,7 +37,9 @@ jobs:
         run: make benchdata-gen
 
       - name: Install goveralls
-        run: go install github.com/mattn/goveralls
+        run: |
+          go get github.com/mattn/goveralls@latest
+          go install github.com/mattn/goveralls@latest
 
       - name: Send coverage
         env:
