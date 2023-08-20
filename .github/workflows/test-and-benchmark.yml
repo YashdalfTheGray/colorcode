@@ -48,11 +48,25 @@ jobs:
         run: goveralls -coverprofile=artifacts/c.out -service=github
 
       - name: Get short hash
+        if: runner.os != 'Windows'
         id: vars
         run: echo "short_sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Upload benchmark artifacts
+        if: runner.os != 'Windows'
         uses: actions/upload-artifact@v3
         with:
           name: ${{ format('benchmarks-{0}-{1}-{2}.json', steps.vars.outputs.short_sha, runner.os, matrix.go) }}
+          path: benchmarks.json
+
+      - name: Get short hash (windows)
+        if: runner.os == 'Windows'
+        id: vars-windows
+        run: Write-Output "short_sha=$(git rev-parse --short HEAD)" >> $Env:GITHUB_OUTPUT
+
+      - name: Upload benchmark artifacts (windows)
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ format('benchmarks-{0}-{1}-{2}.json', steps.vars-windows.outputs.short_sha, runner.os, matrix.go) }}
           path: benchmarks.json
