@@ -48,10 +48,10 @@ jobs:
 
       - name: Get short hash
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+        run: echo "short_sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Upload benchmark artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('benchmarks-{0}-{1}-{2}.json', steps.vars.outputs.sha_short, runner.os, matrix.go) }}
+          name: ${{ format('benchmarks-{0}-{1}-{2}.json', steps.vars.outputs.short_sha, runner.os, matrix.go) }}
           path: benchmarks.json
